@@ -1,0 +1,35 @@
+{
+  "name": "gdlcomponent",
+  "version": "1.0.0",
+  "description": "my TypeScript Component",
+  "main": "indeex.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgance/gdlComponent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgance/gdlComponent/issues"
+  },
+  "homepage": "https://github.com/lgance/gdlComponent#readme",
+  "devDependencies": {
+    "prettier": "^1.17.0",
+    "ts-loader": "^5.4.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "useTabs": false,
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "semi": true,
+    "singleQuote": false
+  }
+}
