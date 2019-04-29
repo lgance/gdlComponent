@@ -10,7 +10,7 @@ module.exports = {
     },
     entry:{
         app:['./src/src/test']
-    }, // 입력
+    }, // 기존파일
 
     module: {
 		rules: [
@@ -19,11 +19,11 @@ module.exports = {
 				use: ['ts-loader']
 			}
 		]
-    },
+    }, // 기존파일에 적용할 모듈 
     
     output:{
-        path:path.join(__dirname,'dist/src'),
+        path:path.join(__dirname,'./dist/src'),
         filename:'app.js'
-    }, // 출력 
+    }, // 결과 파일
   
 }
