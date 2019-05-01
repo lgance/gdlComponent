@@ -5,3 +5,4 @@ dummyServer/node_modules
 
 # test
 ReactTest
+dist/*

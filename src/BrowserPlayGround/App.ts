@@ -4,9 +4,7 @@ export class Test {
   }
 }
 
-
-
-// 콜백헬을 벗어나기 위한 callback 패턴 
+// 콜백헬을 벗어나기 위한 callback 패턴
 // 단순 실행
 
 // const First_func = ()=>{
@@ -24,7 +22,6 @@ export class Test {
 
 // console.log( 1 );
 // First_func();
-
 
 // // 반복문
 
