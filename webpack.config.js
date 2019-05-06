@@ -1,15 +1,17 @@
 const path = require('path');
-
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     name:'myTypeScript-setting',
-    mode:'development',// production
+    mode:'development', // "production" | "development" | "none"
     devtool:'eval',  // source-map   hidden-source-map
     resolve:{
-        extensions:['.ts','json','.jsx','.css']
+        modules:['node_modules'],
+        extensions:['.ts','json','.jsx','.scss','.css','.js']
     },
     entry:{
-        app:['./src/test.ts']
+        index:['./src/index.ts']
     }, // 기존파일
 
     module: {
@@ -19,9 +21,52 @@ module.exports = {
                 use: ['ts-loader'],
                 exclude:["/node_modules"]
             },
+
+            {
+                test:/\.html$/, // html loader
+                use:[
+                    {
+                        loader:'html-loader',
+                        options:{minimize:true}
+                    }
+                ]
+            },
+            {
+                test:/\.scss$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
+            },
+            {
+                test:/\.(png|svg|jpg|gif)$/,
+                    use:[
+                        'file-loader'
+                    ]
+            },
+            //  {
+            //     test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            //     loader: 'url-loader',
+            //     options: {
+            //       name: '[hash].[ext]',
+            //       limit: 10000,
+            //     },
+            //   }
 		]
     }, // 기존파일에 적용할 모듈 
     
+    plugins:[
+        new HtmlWebPackPlugin({
+            template:'./src/index.html',
+            filename:'./index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename:'[name].css',
+            chunkFilename:'[id].css'
+        })
+    ],
+    optimization:{},
     output:{
         path:path.join(__dirname,'./dist/src'),
         filename:'[name].js'

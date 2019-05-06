@@ -14,16 +14,11 @@ interface Person {
   lastName: string;
 }
 
-let user = new Student("first", "second", "last");
-console.log("test");
 function show(param: Person) {
   param.firstName.indexOf;
   return (
     "Hello : " + param.firstName + " " + param.middleName + " " + param.lastName
   );
 }
-let show_ = show(user);
-
-console.log(show_);
-
-let test = "test";
+export { Student };
+export default show;
