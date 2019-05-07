@@ -18,6 +18,9 @@ Started index.html
 Not Installing and Simply to doubleClick index.html
 
 ```
+move to root Directory 
+npm start 
+move to dist Directory 
 doubleClick to index.html 
 ```
 
