@@ -3,7 +3,10 @@ import "./css/common/reset.scss";
 
 import show, * as module from "./testFolder/test";
 import { Student } from "./testFolder/test";
-window.onload = function() {
+
+import App from "./App";
+
+setTimeout(() => {
   let user = new Student("first", "second", "last");
   console.log(user);
 
@@ -13,8 +16,9 @@ window.onload = function() {
   document.body.appendChild(textView);
 
   console.warn("test ppap");
-};
+}, 1000);
 
+App.init();
 // 콜백헬을 벗어나기 위한 callback 패턴
 // 단순 실행
 
