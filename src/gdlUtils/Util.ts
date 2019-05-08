@@ -49,7 +49,6 @@ class Ajax extends Util {
       async,
       beforeSend,
       xhrFields,
-      headers,
       responseType
     } = settings;
     xhr.open(type, url, async);
