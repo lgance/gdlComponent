@@ -1,13 +1,16 @@
 class App {
-  private readonly rootEle: HTMLElement | null = document.getElementById(
-    "root"
-  );
-  static readonly version: string = "0.0.1";
+  private readonly rootEle: HTMLElement;
+  static readonly version: string = '0.0.1';
 
-  constructor() {}
+  constructor() {
+    const dummyElement: HTMLElement = document.createElement('div');
+    dummyElement.id = 'root';
+
+    this.rootEle = document.getElementById('root') || dummyElement;
+  }
   init() {
     let _this = this;
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener('DOMContentLoaded', function(event) {
       _this.AppInitialzieConsole();
     });
   }

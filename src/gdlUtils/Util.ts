@@ -3,34 +3,40 @@ class Util {
 }
 
 interface AjaxSettings {
-  success: Function;
-  error: Function;
-  complete: Function;
+  success: Function | null;
+  error: Function | null;
+  complete: Function | null;
   url: string;
   type: string;
   async: boolean;
   beforeSend: boolean;
-  xhrFields: string | null;
-  headers: string | null;
+  xhrFields: xhrFieldsImpl;
   responseType: string;
+  data: string | object | null;
+  contentType: string;
+}
+
+interface xhrFieldsImpl {
+  onprogress: Function;
 }
 class Ajax extends Util {
   constructor() {
     super();
   }
 
-  call(
+  static call(
     settings: AjaxSettings = {
-      success: () => console.log('Ajax Success'),
-      error: () => console.error('Ajax Error'),
-      complete: () => console.warn('Ajax Complete'),
+      success: null,
+      error: null,
+      complete: null,
       url: 'http://localhost:8080',
       type: 'get',
       async: true,
       beforeSend: true,
-      xhrFields: null,
-      responseType: 'tt',
-      headers: 'tt'
+      xhrFields: { onprogress: () => console.log('on Progress') },
+      responseType: 'text',
+      data: null,
+      contentType: 'application/json'
     }
   ) {
     let xhr = new XMLHttpRequest();
