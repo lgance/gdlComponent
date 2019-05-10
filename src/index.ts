@@ -1,24 +1,30 @@
-import "./css/common/normalize.scss";
-import "./css/common/reset.scss";
+import './css/common/normalize.scss';
+import './css/common/reset.scss';
 
-import show, * as module from "./testFolder/test";
-import { Student } from "./testFolder/test";
+/** TypeScript Module Test */
+import show, * as module from './testFolder/test';
+import { Student } from './testFolder/test';
 
-import App from "./App";
+/** gdl App Initialize  Singleton*/
+import App from './App';
 
+import HeaderLayout from './userLayout/HeaderLayout';
 setTimeout(() => {
-  let user = new Student("first", "second", "last");
+  let user = new Student('first', 'second', 'last');
   console.log(user);
 
-  let textView = document.createElement("div");
+  let textView = document.createElement('div');
   textView.textContent = show(user);
 
   document.body.appendChild(textView);
 
-  console.warn("test ppap");
+  console.warn('test ppap');
 }, 1000);
 
 App.init();
+
+console.log(HeaderLayout.getID());
+
 // 콜백헬을 벗어나기 위한 callback 패턴
 // 단순 실행
 

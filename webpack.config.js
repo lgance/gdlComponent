@@ -8,7 +8,12 @@ module.exports = {
     devtool:'eval',  // source-map   hidden-source-map
     resolve:{
         modules:['node_modules'],
-        extensions:['.ts','json','.jsx','.scss','.css','.js']
+        extensions:['.ts','json','.jsx','.scss','.css','.js'],
+        alias:{
+            "@gdlCommonLayout":path.resolve(__dirname,'src/gdlComponents/CommonLayout'),
+            "@gdlUtils":path.resolve(__dirname,'src/gdlUtils'),
+            "@gdlConfig":path.resolve(__dirname,'src/gdlConfig/_config')
+        }
     },
     entry:{
         index:['./src/index.ts']
