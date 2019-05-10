@@ -1,6 +1,10 @@
-body{
-    background-color:burlywood;
+html,body{
+    width:100%;
+    height:100%;
     box-sizing:border-box;
+
+    /* Test Attribute */
+    background-color:burlywood;
 }
 *{
     box-sizing:inherit;

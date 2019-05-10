@@ -8,22 +8,28 @@ import { Student } from './testFolder/test';
 /** gdl App Initialize  Singleton*/
 import App from './App';
 
+/** User HeaderLayout */
 import HeaderLayout from './userLayout/HeaderLayout';
-setTimeout(() => {
-  let user = new Student('first', 'second', 'last');
-  console.log(user);
 
-  let textView = document.createElement('div');
-  textView.textContent = show(user);
-
-  document.body.appendChild(textView);
-
-  console.warn('test ppap');
-}, 1000);
+HeaderLayout.Init();
 
 App.init();
+App.setHeader(HeaderLayout);
 
-console.log(HeaderLayout.getID());
+// App.setMain(MainLayout);
+// App.setFooter(FooterLayout);
+
+// setTimeout(() => {
+//   let user = new Student('first', 'second', 'last');
+//   console.log(user);
+
+//   let textView = document.createElement('div');
+//   textView.textContent = show(user);
+
+//   document.body.appendChild(textView);
+
+//   console.warn('test ppap');
+// }, 1000);
 
 // 콜백헬을 벗어나기 위한 callback 패턴
 // 단순 실행

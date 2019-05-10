@@ -56,9 +56,18 @@ module.exports = {
             },
             {
                 test:/\.(png|svg|jpg|gif)$/,
-                    use:[
-                        'file-loader'
-                    ]
+                use:[
+                    {
+                        loader:'file-loader',
+                        options:{
+                            name:'[hash].[ext]', // [path][name].[ext]?[hash] result : path/to/file.png?e43b20c069c4a01867c31e98cbce33c9
+                            outputPath:'res/images',
+                            publicPath:'res/images'
+                        }
+                    }
+                ]
+              
+                    
             },
             //  {
             //     test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -88,67 +97,3 @@ module.exports = {
     }, // 결과 파일
   
 }
-
-
-
-
-// const HtmlWebPackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-// const path = require('path');
-
-
-// module.exports = {
-//     mode: "development", // "production" | "development" | "none"
-//     module:{
-//             rules:[
-
-               
-//                 {
-//                     test:/\.js$/,
-//                     exclude:/node_modules/,
-//                     use:{
-//                         loader:'babel-loader',
-//                     }
-//                 },
-//                 {
-//                     test:/\.html$/, // html Loader
-//                     use:[
-//                         {
-//                             loader:'html-loader',
-//                             options:{minimize:true}
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     test:/\.scss$/,
-//                     use:[
-//                         // fallback to style-loader in development
-//                         //   process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-//                         'style-loader',
-//                         "css-loader",
-//                         "sass-loader"
-//                     ]
-//                 },
-//                 {
-//                     test:/\.(png|svg|jpg|gif)$/,
-//                     use:[
-//                         'file-loader'
-//                     ]
-//                 },
-//             ]
-//     },
-//     plugins:[
-//             new HtmlWebPackPlugin({
-//                 template:'./src/index.html',
-//                 filename:'./index.html'
-//             }),
-//             new MiniCssExtractPlugin({
-//                 // Options similar to the same options in webpackOptions.output
-//                 // both options are optional
-//                 filename: "[name].css",
-//                 chunkFilename: "[id].css"
-//             })
-//     ]
-
-// }
