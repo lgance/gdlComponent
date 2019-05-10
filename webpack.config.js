@@ -39,7 +39,17 @@ module.exports = {
             {
                 test:/\.scss$/,
                 use:[
-                    'style-loader',
+                    // {
+                    //     loader:MiniCssExtractPlugin.loader,
+                    //     options:{
+                    //         hmr:process.env.NODE_ENV === 'development',
+                    //         reloadAll:true,
+
+                    //     }
+                    // },
+                    /* devMode ? 'style-loader' : */
+                    MiniCssExtractPlugin.loader,
+                    // 'style-loader',
                     'css-loader',
                     'sass-loader',
                 ]
