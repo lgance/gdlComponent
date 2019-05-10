@@ -3,7 +3,7 @@ This is my playground with TypeScript to Vanilla JS (components)
 
 ## Getting Started
 
-바닐라 JS로 있던 부분들을 TypeScript 로 재 진행
+프레임워크와 라이브러리 없이 TypeScript 만으로 웹 화면들을 구성 하였습니다.
 
 ### Prerequisites
 
