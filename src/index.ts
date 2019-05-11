@@ -15,6 +15,7 @@ HeaderLayout.Init();
 
 App.init();
 App.setHeader(HeaderLayout);
+App.adjustLayout();
 
 // App.setMain(MainLayout);
 // App.setFooter(FooterLayout);

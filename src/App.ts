@@ -1,19 +1,37 @@
 import CommonLayout from '@gdlCommonLayout';
 
-interface pageStructure {
-  header: HTMLElement;
-  main: HTMLElement;
-  footer: HTMLElement;
+interface pageStructureIndexable {
+  [key: string]: HTMLElement;
 }
+
+// interface pageStructure {
+//   header?: HTMLElement;
+//   main?: HTMLElement;
+//   footer?: HTMLElement;
+// }
+
+// test! 은 test의 null 과 undefined 타입을 제거
 
 class App {
   private readonly rootEle: HTMLElement;
   static readonly version: string = '0.0.1';
-  private readonly pageContent!: pageStructure;
+  // ?는 프로퍼티를 선택적으로 바꿈
+  private pageContent: pageStructureIndexable;
   constructor() {
+    // this.pageContent = {} as pageStructure; // 비추
+
+    const _headerElement = document.createElement('header');
+    const _mainElement = document.createElement('main');
+    const _footerElement = document.createElement('footer');
+
+    this.pageContent = {};
+    // this.pageContent = {
+    //     header: _headerElement,
+    //     main: _mainElement,
+    //     footer: _footerElement
+    // };
     const dummyElement: HTMLElement = document.createElement('div');
     dummyElement.id = 'root';
-
     this.rootEle = document.getElementById('root') || dummyElement;
   }
   init() {
@@ -45,12 +63,12 @@ class App {
   adjustLayout(): void {
     const pageContentKeys = Object.keys(this.pageContent);
     pageContentKeys.forEach((item, index) => {
-      // this.rootEle.appendChild(this.pageContent[item]);
+      this.rootEle.appendChild(this.pageContent[item]);
     });
 
-    this.rootEle.appendChild(this.pageContent.header);
-    this.rootEle.appendChild(this.pageContent.main);
-    this.rootEle.appendChild(this.pageContent.footer);
+    // this.rootEle.appendChild(this.pageContent.header);
+    // this.rootEle.appendChild(this.pageContent.main);
+    // this.rootEle.appendChild(this.pageContent.footer);
   }
 
   getVersion() {

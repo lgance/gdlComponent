@@ -6,7 +6,7 @@ class HeaderLayout extends CommonLayout {
   }
   Init() {
     const textView: HTMLInputElement = document.createElement('input');
-    textView.textContent = '텍스트뷰 생성 테스트입니다.';
+    textView.value = '텍스트뷰 생성 테스트입니다.';
     this.append(textView);
   }
 }
