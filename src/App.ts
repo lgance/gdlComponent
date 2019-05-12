@@ -37,10 +37,11 @@ class App {
   init() {
     let _this = this;
     document.addEventListener('DOMContentLoaded', function(event) {
-      _this.AppInitialzieConsole();
+      _this.AppInitializeConsole();
     });
+    
   }
-  AppInitialzieConsole() {
+  AppInitializeConsole() {
     console.warn(`App Init Complete \r\n ${App.version}`);
   }
 
@@ -63,7 +64,7 @@ class App {
   adjustLayout(): void {
     const pageContentKeys = Object.keys(this.pageContent);
     pageContentKeys.forEach((item, index) => {
-      this.rootEle.appendChild(this.pageContent[item]);
+       this.rootEle.appendChild(this.pageContent[item]);
     });
 
     // this.rootEle.appendChild(this.pageContent.header);
