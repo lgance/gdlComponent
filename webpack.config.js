@@ -11,8 +11,10 @@ module.exports = {
         extensions:['.ts','json','.jsx','.scss','.css','.js'],
         alias:{
             "@gdlCommonLayout":path.resolve(__dirname,'src/gdlComponents/CommonLayout'),
+            "@gdlCommonWidget":path.resolve(__dirname,'src/gdlComponents/CommonWidget'),
             "@gdlUtils":path.resolve(__dirname,'src/gdlUtils'),
-            "@gdlConfig":path.resolve(__dirname,'src/gdlConfig/_config')
+            "@gdlConfig":path.resolve(__dirname,'src/gdlConfig/_config'),
+            "@userCSS":path.resolve(__dirname,'src/css/userCSS')
         }
     },
     entry:{
@@ -47,7 +49,10 @@ module.exports = {
 
                     //     }
                     // },
-                    /* devMode ? 'style-loader' : */
+                    /* devMode ? 'style-loader' : 
+                    process.env.NODE_ENV !== 'production' ? 'style-loader' :
+                    MiniCssExtractPlugin.loader,
+                    */
                     MiniCssExtractPlugin.loader,
                     // 'style-loader',
                     'css-loader',

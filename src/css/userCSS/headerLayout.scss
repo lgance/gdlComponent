@@ -1,0 +1,41 @@
+
+
+
+
+header.header{
+  display:flex;
+  flex-flow:row nowrap;
+
+  height:65px;
+  width:100%;
+
+  .header__logo{
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: left;
+      align-items:center;
+      margin-right:auto;
+      
+      height:100%;
+      width:9.5rem;
+
+      .logo{
+        height:32px;
+        width:32px;
+        background-color:blue;
+      }
+      .logoString{
+        color:#FFFFFF;
+        font-weight:600;
+      }
+  }
+  .header__buttons{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+
+    width:auto;
+
+
+  }
+}
