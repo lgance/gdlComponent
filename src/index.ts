@@ -11,14 +11,27 @@ import App from './App';
 /** User HeaderLayout */
 import HeaderLayout from './userLayout/HeaderLayout';
 
+/** User MainLayout */
+import MainLayout from './userLayout/MainLayout';
+
+/** User FooterLayout */
+import FooterLayout from './userLayout/FooterLayout';
+
+/** User Layout Initialize */
 HeaderLayout.Init();
+MainLayout.Init();
+FooterLayout.Init();
 
+/** App Initialize */
 App.init();
-App.setHeader(HeaderLayout);
-App.adjustLayout();
 
-// App.setMain(MainLayout);
-// App.setFooter(FooterLayout);
+/** App Layout Settings */
+App.setHeader(HeaderLayout);
+App.setMain(MainLayout);
+App.setFooter(FooterLayout);
+
+/** App Layout adjustings */
+App.adjustLayout();
 
 // setTimeout(() => {
 //   let user = new Student('first', 'second', 'last');
