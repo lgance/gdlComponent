@@ -1,11 +1,16 @@
-import CommonWidget, { widgetProperties } from '@gdlCommonWidget';
+import CommonWidget, { commonWidgetProperties } from '@gdlCommonWidget';
 import './Button.scss';
 
 class Button extends CommonWidget {
-  constructor(properties: widgetProperties) {
-    const buttonElement = document.createElement('button');
+  constructor(properties: commonWidgetProperties) {
+    const gdlButtonWidget = document.createElement('button');
+    super(gdlButtonWidget, properties);
+  }
 
-    super(buttonElement, properties);
+  private Init(): HTMLElement {
+    const rootElement = document.createElement('div');
+
+    return rootElement;
   }
 }
 

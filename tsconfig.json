@@ -61,6 +61,7 @@
     "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
     "paths": {
       "@gdlUtils/*": ["gdlUtils/*"],
+      "@gdlComponent":["gdlComponents"],
       "@gdlCommonLayout": ["gdlComponents/CommonLayout"],
       "@gdlCommonWidget":["gdlComponents/CommonWidget"],
       "@gdlConfig/*": ["gdlConfig/_config/*"],

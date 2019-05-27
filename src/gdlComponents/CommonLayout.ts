@@ -1,25 +1,33 @@
 import Util from '@gdlUtils/Util';
+import CommonWidget, { commonWidgetProperties } from '@gdlCommonWidget';
+
 abstract class CommonLayout {
-  private readonly _id: string;
-  private _template: HTMLElement;
+  protected readonly _id: string;
+  protected _template: HTMLElement;
+  protected _children: Array<CommonWidget>;
 
   constructor(template: HTMLElement) {
     this._template = template;
     this._id = Util.createUUID();
     this._template.id = this._id;
+    this._children = [];
   }
 
   abstract Init(template: HTMLElement): void;
 
-  getID(): string {
+  public getID(): string {
     return this._id;
   }
 
-  append(template: HTMLElement): void {
+  public append(template: HTMLElement): void {
     this._template.appendChild(template);
   }
-
-  getLayout(): HTMLElement {
+  public appendWidget(gdlComponent: CommonWidget): void {
+    let gdlWidgetTemplate = gdlComponent.getWidget();
+    this._template.appendChild(gdlWidgetTemplate);
+    this._children.push(gdlComponent);
+  }
+  public getLayout(): HTMLElement {
     return this._template;
   }
 }

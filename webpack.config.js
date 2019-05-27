@@ -10,6 +10,7 @@ module.exports = {
         modules:['node_modules'],
         extensions:['.ts','json','.jsx','.scss','.css','.js'],
         alias:{
+            "@gdlComponent":path.resolve(__dirname,'src/gdlComponents'),
             "@gdlCommonLayout":path.resolve(__dirname,'src/gdlComponents/CommonLayout'),
             "@gdlCommonWidget":path.resolve(__dirname,'src/gdlComponents/CommonWidget'),
             "@gdlUtils":path.resolve(__dirname,'src/gdlUtils'),
