@@ -25,15 +25,15 @@ class HeaderLayout extends CommonLayout {
     this.append(logoRegion);
     // right
 
-    const headerButtons = document.createElement('div');
-    headerButtons.className = 'header__buttons';
+    const headerRightArea = document.createElement('div');
+    headerRightArea.className = 'header__rightarea';
 
     const testElement = document.createElement('button');
     testElement.innerText = 'Button';
 
-    headerButtons.appendChild(testElement);
+    headerRightArea.appendChild(testElement);
 
-    this.append(headerButtons);
+    this.append(headerRightArea);
   }
 }
 

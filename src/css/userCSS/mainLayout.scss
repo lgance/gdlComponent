@@ -3,9 +3,36 @@
 
 
 main{
+    display:block;
     width:100%;
     height:calc(100% - 110px);
     background-color:#FFD9EC;
+    
 
+    .lnb__area{
+        // display:flex;
+        // flex-flow:column nowrap;
 
+        display:inline-block;
+        height:100%;
+        width:240px;
+        overflow-y:auto;
+        // testColor
+        background-color:#DAD9FF;
+    }
+
+    .content__area{
+        // display:flex;
+        // flex-flow:row nowrap;
+        // align-items:flex-start;
+        display:block;
+        float:right;
+
+        overflow-y:auto;
+        height:100%;
+        width:calc(100% - 240px);
+        // test Color
+        background-color:#FAF4C0;
+
+    }
 }

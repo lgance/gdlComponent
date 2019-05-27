@@ -1,10 +1,9 @@
 import Util from '@gdlUtils/Util';
 
 export interface commonWidgetProperties {
-  width: string;
-  height: string;
-  margin: string;
-  padding: string;
+  width?: string;
+  height?: string;
+  text: string;
 }
 
 interface commonWidgetEvents {
