@@ -8,7 +8,10 @@ header.header{
   padding:10px 0px;
   height:65px;
   width:100%;
+  box-sizing:border-box;
 
+  // test Border
+  border:1px solid black;
   .header__logo{
       display:flex;
       flex-flow:row nowrap;

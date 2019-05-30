@@ -1,22 +1,25 @@
 
-
-
-
 main{
     display:block;
     width:100%;
-    height:calc(100% - 110px);
-    background-color:#FFD9EC;
+    height:calc(100% - 130px);
+    background-color:#FFFFFF;
+    margin:10px 0px;
+    box-sizing:border-box;
+    
+
+    // test Border
+    border:1px solid black;
     
 
     .lnb__area{
         // display:flex;
         // flex-flow:column nowrap;
-
         display:inline-block;
         height:100%;
         width:240px;
         overflow-y:auto;
+        margin-right:10px;
         // testColor
         background-color:#DAD9FF;
     }
@@ -30,7 +33,7 @@ main{
 
         overflow-y:auto;
         height:100%;
-        width:calc(100% - 240px);
+        width:calc(100% - 250px);
         // test Color
         background-color:#FAF4C0;
 
