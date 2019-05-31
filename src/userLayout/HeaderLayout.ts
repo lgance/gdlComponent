@@ -1,10 +1,12 @@
 import CommonLayout from '@gdlCommonLayout';
 import '@userCSS/headerLayout.scss';
 
+// import '@gdlComponent/Button';
+
 class HeaderLayout extends CommonLayout {
   constructor() {
     const headerLayout: HTMLHeadElement = document.createElement('header');
-    headerLayout.className = 'header';
+    // headerLayout.className = 'header';
     super(headerLayout);
   }
   Init() {
@@ -25,15 +27,15 @@ class HeaderLayout extends CommonLayout {
     this.append(logoRegion);
     // right
 
-    const headerRightArea = document.createElement('div');
-    headerRightArea.className = 'header__rightarea';
+    const headerButtons = document.createElement('div');
+    headerButtons.className = 'header__buttons';
 
     const testElement = document.createElement('button');
     testElement.innerText = 'Button';
 
-    headerRightArea.appendChild(testElement);
+    headerButtons.appendChild(testElement);
 
-    this.append(headerRightArea);
+    this.append(headerButtons);
   }
 }
 

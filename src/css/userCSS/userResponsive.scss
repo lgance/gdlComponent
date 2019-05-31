@@ -1,0 +1,27 @@
+@import '../common/gdlresponsive.scss';
+
+@include mob-large{
+  div#root{
+    overflow:auto;
+  }
+  header{
+      height:40px;
+  }
+  main{
+      background-color:red;
+      // height: calc(100% - 65px);
+      height:100%;
+    
+      .lnb__area{
+          display:none;
+      }
+      .content__area{
+          width:100%;
+      }
+
+  }
+  footer{
+      display:none;
+  }
+
+}

@@ -4,7 +4,7 @@ import '@userCSS/footerLayout.scss';
 class FooterLayout extends CommonLayout {
   constructor() {
     const footerLayout: HTMLElement = document.createElement('footer');
-    footerLayout.className = 'footer';
+    // footerLayout.className = 'footer';
 
     super(footerLayout);
   }

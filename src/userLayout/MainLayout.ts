@@ -4,7 +4,7 @@ import '@userCSS/mainLayout.scss';
 class MainLayout extends CommonLayout {
   constructor() {
     const mainLayout: HTMLMainElement = document.createElement('main');
-    mainLayout.className = 'main';
+    // mainLayout.className = 'main';
     super(mainLayout);
   }
   Init() {

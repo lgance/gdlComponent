@@ -17,6 +17,9 @@ import MainLayout from './userLayout/MainLayout';
 /** User FooterLayout */
 import FooterLayout from './userLayout/FooterLayout';
 
+/** User Responsive SCSS */
+import '@userCSS/userResponsive.scss';
+
 /** User Layout Initialize */
 HeaderLayout.Init();
 MainLayout.Init();
