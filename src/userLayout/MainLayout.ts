@@ -10,11 +10,8 @@ class MainLayout extends CommonLayout {
   Init() {
     const lnbMenuArea = document.createElement('nav');
     lnbMenuArea.className = 'lnb__area';
+    lnbMenuArea.innerText = 'lnb입니다.';
 
-    const textView2 = document.createElement('input');
-    textView2.value = 'LNB 레이아웃입니다.';
-
-    lnbMenuArea.appendChild(textView2);
     const mainContentArea = document.createElement('div');
     mainContentArea.className = 'content__area';
 
