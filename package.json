@@ -43,5 +43,8 @@
     "bracketSpacing": true,
     "semi": true,
     "singleQuote": true
+  },
+  "dependencies": {
+    "redux": "^4.0.1"
   }
 }

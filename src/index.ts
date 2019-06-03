@@ -5,6 +5,9 @@ import './css/common/reset.scss';
 import show, * as module from './testFolder/test';
 import { Student } from './testFolder/test';
 
+/** Redux State Management Require */
+import { createStore } from 'redux';
+
 /** gdl App Initialize  Singleton*/
 import App from './App';
 
