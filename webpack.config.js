@@ -21,7 +21,6 @@ module.exports = {
     entry:{
         index:['./src/index.ts']
     }, // 기존파일
-
     module: {
 		rules: [
 			{
@@ -29,13 +28,12 @@ module.exports = {
                 use: ['ts-loader'],
                 exclude:["/node_modules"]
             },
-
             {
                 test:/\.html$/, // html loader
                 use:[
                     {
                         loader:'html-loader',
-                        options:{minimize:true}
+                        // options:{minimize:true}
                     }
                 ]
             },
@@ -61,28 +59,34 @@ module.exports = {
                 ]
             },
             {
-                test:/\.(png|svg|jpg|gif)$/,
-                use:[
-                    {
-                        loader:'file-loader',
-                        options:{
-                            name:'[hash].[ext]', // [path][name].[ext]?[hash] result : path/to/file.png?e43b20c069c4a01867c31e98cbce33c9
-                            outputPath:'res/images',
-                            publicPath:'res/images'
-                        }
+                test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                // test:/\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+                use:{
+                    loader:'url-loader',
+                    options:{
+                        name:'/../[path][hash].[ext]',
+                        limit:10*1024 // 10kb
                     }
-                ]
-              
-                    
+                }
             },
-            //  {
-            //     test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            //     loader: 'url-loader',
-            //     options: {
-            //       name: '[hash].[ext]',
-            //       limit: 10000,
-            //     },
-            //   }
+            // favicon/icon-line.ico
+            // {
+            //     // test:/\.(png|svg|jpg|gif|ico)$/,
+            //     use:[
+            //         {
+            //             loader:'file-loader',
+            //             options:{
+            //             name:'[hash].[ext]', // [path][name].[ext]?[hash] result : path/to/file.png?e43b20c069c4a01867c31e98cbce33c9
+            //             outputPath:'res',
+            //             publicPath:'res'
+            //                 // name:'[hash].[ext]', // [path][name].[ext]?[hash] result : path/to/file.png?e43b20c069c4a01867c31e98cbce33c9
+            //                 // outputPath:'res/images',
+            //                 // publicPath:'res/images'
+            //             }
+            //         }
+            //     ]
+            // },
+           
 		]
     }, // 기존파일에 적용할 모듈 
     
