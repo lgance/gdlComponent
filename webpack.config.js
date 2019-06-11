@@ -33,7 +33,7 @@ module.exports = {
                 use:[
                     {
                         loader:'html-loader',
-                        // options:{minimize:true}
+                        options:{minimize:true}
                     }
                 ]
             },
@@ -64,7 +64,7 @@ module.exports = {
                 use:{
                     loader:'url-loader',
                     options:{
-                        name:'/../[path][hash].[ext]',
+                        name:'../[path][hash].[ext]',
                         limit:10*1024 // 10kb
                     }
                 }
@@ -93,6 +93,7 @@ module.exports = {
     plugins:[
         new HtmlWebPackPlugin({
             template:'./src/index.html',
+            favicon:'./src/res/favicon/icon_line.ico',
             filename:'./index.html'
         }),
         new MiniCssExtractPlugin({

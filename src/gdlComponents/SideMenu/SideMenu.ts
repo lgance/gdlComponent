@@ -8,7 +8,7 @@ class SideMenu extends CommonWidget {
   }
   private Init(): HTMLElement {
     const rootElement = document.createElement('div');
-
+    rootElement.innerText = '사이드메뉴입니다.';
     return rootElement;
   }
 }
