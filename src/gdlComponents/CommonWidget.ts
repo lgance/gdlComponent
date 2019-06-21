@@ -34,6 +34,9 @@ abstract class CommonWidget {
   getProperty(key: keyof commonWidgetProperties) {
     return this._properties[key];
   }
+  public append(template: HTMLElement): void {
+    this._template.appendChild(template);
+  }
 }
 
 export default CommonWidget;

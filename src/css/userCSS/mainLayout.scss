@@ -1,15 +1,15 @@
+@import '../common/util.scss';
+
 
 main{
     display:block;
     width:100%;
     height:calc(100% - 130px);
-    background-color:#FFFFFF;
     margin:10px 0px;
     box-sizing:border-box;
     
-
-    // test Border
-    border:1px solid black;
+    @include gdlBox-shadow;
+  
     
 
     .lnb__area{
@@ -17,11 +17,13 @@ main{
         // flex-flow:column nowrap;
         display:inline-block;
         height:100%;
-        width:240px;
+        width:245px;
         overflow-y:auto;
-        margin-right:10px;
+        margin-right:5px;
         // testColor
         background-color:#DAD9FF;
+
+        
     }
 
     .content__area{

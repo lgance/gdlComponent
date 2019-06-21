@@ -8,6 +8,16 @@ $violet: #7950f2;
 
 
 
+$boxshadowColor : #A6A6A6;
+
+@mixin gdlBox-shadow($wid:100%){
+  box-shadow: 0 0 5px $boxshadowColor,
+              0 0 5px $boxshadowColor;
+  // test Border
+  // border:1px solid black;    
+}
+
+
 // mixin 만들기 
 @mixin square($size) {
     $calculated: 32px * $size;

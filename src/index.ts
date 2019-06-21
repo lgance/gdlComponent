@@ -1,6 +1,8 @@
 import './css/common/normalize.scss';
 import './css/common/reset.scss';
 
+/** Import favicon */
+// import './res/favicon/icon-line.ico';
 /** TypeScript Module Test */
 import show, * as module from './testFolder/test';
 import { Student } from './testFolder/test';

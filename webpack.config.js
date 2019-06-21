@@ -3,6 +3,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+    // Mobile Test Configurtion 
+    devServer:{
+        contentBase:path.resolve(__dirname,'/src'),
+        disableHostCheck:true,
+        host:'0.0.0.0'
+    },
     name:'myTypeScript-setting',
     mode:'development', // "production" | "development" | "none"
     devtool:'eval',  // source-map   hidden-source-map
@@ -64,7 +70,8 @@ module.exports = {
                 use:{
                     loader:'url-loader',
                     options:{
-                        name:'../[path][hash].[ext]',
+                        // 2019-06-21 테스트이미지가 안불려서 ../ -> ./로 수정 
+                        name:'./[path][hash].[ext]',
                         limit:10*1024 // 10kb
                     }
                 }
@@ -94,7 +101,8 @@ module.exports = {
         new HtmlWebPackPlugin({
             template:'./src/index.html',
             favicon:'./src/res/favicon/icon_line.ico',
-            filename:'./index.html'
+            filename:'./index.html',
+            showErrors: true
         }),
         new MiniCssExtractPlugin({
             filename:'[name].css',

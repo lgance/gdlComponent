@@ -4,14 +4,19 @@ html,body{
     box-sizing:border-box;
 
     /* Test Attribute */
-    background-color:burlywood;
+    // background-color:burlywood;
 }
 *{
     box-sizing:inherit;
 }
 #root{
     padding:10px;
-    width:100%;
+    // width:100%;
+    max-width:1440px;
     height:100%;
     overflow:hidden;
+    margin:0 auto;
+    background-color:rgb(240, 236, 237);
+
+
 }
