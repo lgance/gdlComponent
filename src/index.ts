@@ -4,8 +4,8 @@ import './css/common/reset.scss';
 /** Import favicon */
 // import './res/favicon/icon-line.ico';
 /** TypeScript Module Test */
-import show, * as module from './testFolder/test';
-import { Student } from './testFolder/test';
+import show, * as module from './test/test';
+import { Student } from './test/test';
 
 /** Redux State Management Require */
 import { createStore } from 'redux';

@@ -32,13 +32,23 @@ class MainLayout extends CommonLayout {
     this.append(mainContentArea);
 
     const sideMenuProperties = {
-      text: '사이드메뉴',
+      type: 'search',
+      title: '타이틀입니다.',
+      menuItems: ['TypeScript,Node.js,JavaScript,React,QA,Cloud'],
       width: '100%',
       height: '100%'
     };
     const gdlSideMenu = new SideMenu(sideMenuProperties);
+
+    // Add to Components;
     this.lnbComponent = gdlSideMenu;
+
     lnbMenuArea.appendChild(gdlSideMenu.getWidget());
+
+    this.callSideMenu().updateMenu([1, 2, 3, 4]);
+  }
+  public callSideMenu(): any {
+    return this.lnbComponent;
   }
 }
 
